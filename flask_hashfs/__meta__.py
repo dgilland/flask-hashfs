@@ -9,7 +9,7 @@ __url__ = 'https://github.com/dgilland/flask-hashfs'
 
 __version__ = '0.0.0'
 
-__install_requires__ = ['hashfs']
+__install_requires__ = ['hashfs', 'flask']
 __tests_require__ = ['tox']
 
 __author__ = 'Derrick Gilland'
