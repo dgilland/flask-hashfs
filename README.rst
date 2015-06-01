@@ -68,7 +68,7 @@ Configure ``Flask-HashFS`` to store files in ``/var/www/data/uploads`` and give 
         'HASHFS_PATH_PREFIX': '/uploads',
         'HASHFS_ROOT_FOLDER': '/var/www/data/uploads',
         'HASHFS_DEPTH': 4,
-        'HASHFS_LENGTH': 1,
+        'HASHFS_WIDTH': 1,
         'HASHFS_ALGORITHM': 'sha256'
     })
 

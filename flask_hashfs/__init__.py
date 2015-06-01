@@ -45,7 +45,7 @@ class FlaskHashFS(object):
     ``HASHFS_DEPTH``        Number of nested folders to use when saving files.
 
                             Defaults to ``4``.
-    ``HASHFS_LENGTH``       Length of each nested folder.
+    ``HASHFS_WIDTH``        Width of each nested subfolder.
 
                             Defaults to ``1``.
     ``HASHFS_ALGORITHM``    Hashing algorithm to use when computing content
@@ -71,7 +71,7 @@ class FlaskHashFS(object):
         # HashFS specific config values.
         app.config.setdefault('HASHFS_ROOT_FOLDER', None)
         app.config.setdefault('HASHFS_DEPTH', 4)
-        app.config.setdefault('HASHFS_LENGTH', 1)
+        app.config.setdefault('HASHFS_WIDTH', 1)
         app.config.setdefault('HASHFS_ALGORITHM', 'sha256')
 
         if app.config['HASHFS_PATH_PREFIX'] is None:
@@ -92,7 +92,7 @@ class FlaskHashFS(object):
 
         client = HashFS(app.config['HASHFS_ROOT_FOLDER'],
                         depth=app.config['HASHFS_DEPTH'],
-                        length=app.config['HASHFS_LENGTH'],
+                        width=app.config['HASHFS_WIDTH'],
                         algorithm=app.config['HASHFS_ALGORITHM'])
 
         app.extensions[self._extension_name] = {

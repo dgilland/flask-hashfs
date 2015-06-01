@@ -74,7 +74,7 @@ def test_hashfs_delete(fs):
    {'HASHFS_HOST': None,
     'HASHFS_PATH_PREFIX': '',
     'HASHFS_DEPTH': 4,
-    'HASHFS_LENGTH': 1,
+    'HASHFS_WIDTH': 1,
     'HASHFS_ALGORITHM': 'sha256'},
 ])
 def test_config_defaults(testdir, config):
