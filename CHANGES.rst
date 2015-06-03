@@ -2,6 +2,9 @@ Changelog
 =========
 
 
+- Replace manual proxy access of ``HashFS`` methods with single ``__getattr__`` method.
+
+
 v0.2.0 (2015-06-02)
 -------------------
 

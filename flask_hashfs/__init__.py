@@ -130,55 +130,12 @@ class FlaskHashFS(object):
 
         return urljoin(*paths)
 
-    def put(self, file, extension=None):
-        """Store contents of `file` on disk using its content hash for the
-        address.
+    def __getattr__(self, attr):
+        """Proxy all other attribute access to underlying HashFS instance.
 
-        Args:
-            file (mixed): Readable object or path to file.
-            extension (str, optional): Optional extension to append to file
-                when saving.
-
-        Returns:
-            HashAddress: File's hash address.
+        Please see http://hashfs.readthedocs.org/ for further details.
         """
-        return self.client.put(file, extension=extension)
-
-    def get(self, file):
-        """Return :class:`HashAdress` from given id or path. If `file` does not
-        refer to a valid file, then ``None`` is returned.
-
-        Args:
-            file (str): Address ID or path of file.
-
-        Returns:
-            HashAddress: File's hash address.
-        """
-        return self.client.get(file)
-
-    def open(self, file, mode='rb'):
-        """Return open buffer object from given id or path.
-
-        Args:
-            file (str): Address ID or path of file.
-            mode (str, optional): Mode to open file in. Defaults to ``'rb'``.
-
-        Returns:
-            Buffer: An ``io`` buffer dependent on the `mode`.
-
-        Raises:
-            IOError: If file doesn't exist.
-        """
-        return self.client.open(file, mode=mode)
-
-    def delete(self, file):
-        """Delete file using id or path. Remove any empty directories after
-        deleting. No exception is raised if file doesn't exist.
-
-        Args:
-            file (str): Address ID or path of file.
-        """
-        self.client.delete(file)
+        return getattr(self.client, attr)
 
 
 def urljoin(*paths):
