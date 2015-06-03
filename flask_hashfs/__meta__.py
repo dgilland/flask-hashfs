@@ -7,7 +7,7 @@ __summary__ = ('Flask extension for HashFS, a content-addressable file '
                'management system.')
 __url__ = 'https://github.com/dgilland/flask-hashfs'
 
-__version__ = '0.2.0'
+__version__ = '0.3.0'
 
 __install_requires__ = ['hashfs>=0.3.0', 'flask']
 __tests_require__ = ['tox']
